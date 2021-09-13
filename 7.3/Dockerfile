@@ -26,6 +26,7 @@ RUN apt-get update && \
     a2dismod --force autoindex && \
 	a2enmod mpm_prefork && \
 	a2enmod php${PHP_VERSION} && \
+    rm -r /var/www/html/* \
     apt-get remove -y software-properties-common gcc && \
     apt-get autoclean && \
     apt-get autoremove -y
